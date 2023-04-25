@@ -1,5 +1,4 @@
 name: 'nfinx-docker-build'
-description: 'Building nfinx docker image'
 on:
   push:
     branches: [ main ]
