@@ -1,0 +1,17 @@
+name: 'nfinx-docker-build'
+description: 'Building nfinx docker image'
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+  
+jobs:
+  build_docker_image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag nginx-ruchidhal:$(date +%s)
+      
